@@ -15,7 +15,6 @@ import {
     useColorModeValue,
     useBreakpointValue,
     useDisclosure,
-    GridItem,
     SimpleGrid
   } from '@chakra-ui/react';
 
@@ -69,8 +68,8 @@ import { Link as Routerlink } from "react-router-dom"
           label:"Apply",
           subLabel:"Collect ,review & manage applications online"
         },{
-          label:"Wufoo",
-          subLabel:"Gather data & payments with online forms"
+          label:"View All",
+         href:'/products'
         },
       ],
     },
@@ -131,7 +130,7 @@ subLabel:"Tutorials & how-to guides for using SurveyKing"
     },
     {
       label: 'Plans & Pricing',
-      href: '#',
+      href: '/pricing',
     },
   ];
    
@@ -198,12 +197,13 @@ w={20}
               fontSize={'sm'}
               fontWeight={600}
               color={'white'}
-              bg={'pink.400'}
+              bg={'orange.400'}
               href={'#'}
               _hover={{
                 bg: 'pink.300',
               }}>
-              Sign Up
+              <Routerlink to="/signup">Sign Up</Routerlink>
+            
             </Button>
           </Stack>
         </Flex>

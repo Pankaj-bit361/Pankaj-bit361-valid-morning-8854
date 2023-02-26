@@ -1,0 +1,14 @@
+.question{
+    width: 50%;
+    margin: auto;
+    margin-top: 5%;
+    height: 500px;
+    overflow-x: auto;
+    /* overflow-y: auto; */
+}
+.hover1{
+    transition: transform 0.5s;
+}
+.hover1:hover{
+    transform: scale(1.1);
+}

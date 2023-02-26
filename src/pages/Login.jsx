@@ -12,8 +12,40 @@ import {
     Text,
     useColorModeValue,
   } from '@chakra-ui/react';
-  
+import axios from 'axios';
+  import { useState,useEffect } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
   export default function Login() {
+
+const navigate=useNavigate()
+const [data,setdata]=useState([])
+const[checkemail,setcheckemail]=useState("")
+const[checkpss,setcheckpss]=useState("")
+useEffect(() => {
+  
+axios.get(`https://63f87b1f5b0e4a127de6dd05.mockapi.io/survey/users`)
+.then((res)=>setdata(res.data))
+ 
+}, [])
+
+
+const onsubmit=()=>{
+  
+  data.map((item)=>{
+    if(item.email===checkemail && item.password===checkpss){
+      alert(`login Succes`)
+      navigate("/")
+    }
+  
+// if(data.length===+item.id){
+//   alert(`wrong email or password`)
+// }
+  })
+}
+const clicked=()=>{
+  navigate("/admin")
+}
+
     return (
       <Flex
         minH={'100vh'}
@@ -23,9 +55,7 @@ import {
         <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
           <Stack align={'center'}>
             <Heading fontSize={'4xl'}>Sign in to your account</Heading>
-            <Text fontSize={'lg'} color={'gray.600'}>
-              to enjoy all of our cool <Link color={'blue.400'}>features</Link> ✌️
-            </Text>
+            <Button colorScheme={'orange'} onClick={clicked}> Login As Admin</Button>
           </Stack>
           <Box
             rounded={'lg'}
@@ -35,11 +65,11 @@ import {
             <Stack spacing={4}>
               <FormControl id="email">
                 <FormLabel>Email address</FormLabel>
-                <Input type="email" />
+                <Input type="email" value={checkemail} onChange={(e)=>setcheckemail(e.target.value)} />
               </FormControl>
               <FormControl id="password">
                 <FormLabel>Password</FormLabel>
-                <Input type="password" />
+                <Input type="password" value={checkpss} onChange={(e)=>setcheckpss(e.target.value)} />
               </FormControl>
               <Stack spacing={10}>
                 <Stack
@@ -47,13 +77,13 @@ import {
                   align={'start'}
                   justify={'space-between'}>
                   <Checkbox>Remember me</Checkbox>
-                  <Link color={'blue.400'}>Forgot password?</Link>
+                  <Link color={'orange.400'}>Forgot password?</Link>
                 </Stack>
                 <Button
-                  bg={'blue.400'}
-                  color={'white'}
+                  colorScheme={'orange'}
+                  onClick={onsubmit}
                   _hover={{
-                    bg: 'blue.500',
+                    bg: 'orange.400',
                   }}>
                   Sign in
                 </Button>

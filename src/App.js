@@ -5,6 +5,9 @@ import Home from './pages/Home';
 import AllRouting from './Routing/AllRouting';
 import Getdata from './components/Getdata';
 import axios from "axios"
+import Alert1 from './components/Alert1';
+
+
 
 function App() {
   return (
@@ -13,6 +16,7 @@ function App() {
   <Navbar/>
   <AllRouting/>
   {/* <Getdata/> */}
+  {/* <Alert1/> */}
    </>
   );
 }

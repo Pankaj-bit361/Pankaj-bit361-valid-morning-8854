@@ -1,0 +1,3 @@
+
+
+GET  "https://63f87b1f5b0e4a127de6dd05.mockapi.io/survey/survey"
