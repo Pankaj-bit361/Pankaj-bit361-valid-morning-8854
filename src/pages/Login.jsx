@@ -9,12 +9,12 @@ import {
     Link,
     Button,
     Heading,
-    Text,
+
     useColorModeValue,
   } from '@chakra-ui/react';
 import axios from 'axios';
   import { useState,useEffect } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
   export default function Login() {
 
 const navigate=useNavigate()
@@ -31,7 +31,7 @@ axios.get(`https://63f87b1f5b0e4a127de6dd05.mockapi.io/survey/users`)
 
 const onsubmit=()=>{
   
-  data.map((item)=>{
+  data?.map((item)=>{
     if(item.email===checkemail && item.password===checkpss){
       alert(`login Succes`)
       navigate("/")
@@ -40,6 +40,7 @@ const onsubmit=()=>{
 // if(data.length===+item.id){
 //   alert(`wrong email or password`)
 // }
+return 0
   })
 }
 const clicked=()=>{

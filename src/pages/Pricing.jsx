@@ -1,7 +1,6 @@
-import { Heading ,Center, SimpleGrid,Box,Text,Flex,Button, List,
+import { Heading ,Center, SimpleGrid,Box,Text,Flex,Button, 
   ListItem,
-  ListIcon,
-  OrderedList,
+
   UnorderedList,} from '@chakra-ui/react'
 import React from 'react'
 import Footer from '../components/Footer'

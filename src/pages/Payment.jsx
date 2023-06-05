@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Payment.css'
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import Alert1 from '../components/Alert1';
 const Payment = () => {
     const [name,setName]=useState("");
@@ -30,7 +30,7 @@ naviagte("/")
     <div id="card1">
 
       <div id="da">
-      <img width="50px" id="jumbo" src="https://cdn-icons-png.flaticon.com/512/6404/6404078.png"/>
+      <img width="50px" id="jumbo" src="https://cdn-icons-png.flaticon.com/512/6404/6404078.png" alt='food'/>
       <div>
         <h6 class="margin"><span id="nam">{name.length===0?'Your Name':name}</span></h6>
         <h6 class="margin" > <span id="num">{card.length===0?'Card Number':card}</span></h6>
