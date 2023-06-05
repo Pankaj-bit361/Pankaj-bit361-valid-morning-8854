@@ -27,7 +27,7 @@ const Home = () => {
 <Center p={2} >
       <h1>A global leader in survey software. 20 million questions answered daily.</h1>
 </Center>
-<Center><Button h={"50px"} w={"11%"} mt={10} colorScheme={'pink'}>Get Started</Button></Center>
+<Center><Button h={"50px"} w={"11%"} mt={10} colorScheme={'orange'}>Get Started</Button></Center>
 </Box>
 <Center mt={10}>
 <Box w={"70%"} bg={"blackAlpha.200"} opacity={"100%"} p={10}>
